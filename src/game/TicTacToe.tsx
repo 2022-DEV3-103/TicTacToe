@@ -35,12 +35,30 @@ const TicTacToe: React.FC = (): React.ReactElement => {
             gameState[cellId] = Player.PLAYER_O;
             setPlayer(Player.PLAYER_X);
         }
-        //checkTableFilled(gameState); if draw
-        //checkWinner(gameState); if winner
+        checkTableFilled(gameState);
+        checkWinner(gameState);
         setBoxes(gameState);
     }
 
 
+    const checkWinner = (gameState: Array<string>) => {
+        waysToWin.forEach((wayToWin: number[]) => {
+                // we start the game
+                if (gameState[wayToWin[0]] === '' && gameState[wayToWin[1]] === '' && gameState[wayToWin[2]] === '') {
+                    return;
+                } else if (gameState[wayToWin[0]] === gameState[wayToWin[1]]
+                    && gameState[wayToWin[1]] === gameState[wayToWin[2]]) {
+                    setWinner(player);
+                }
+            }
+        );
+    }
+
+    const checkTableFilled = (gameState: Array<string>) => {
+        if (gameState.every(element => element !== '')) {
+            setTableFilled(true);
+        }
+    }
 
     const TicTacBox = ({cellId}: BoxProps) => {
         const enableTable = winner.length === 0 && !tableFilled;
@@ -88,6 +106,22 @@ const TicTacToe: React.FC = (): React.ReactElement => {
                     </tbody>
                 </table>
             </div>
+
+            {
+                winner.length > 0 &&
+                <p className="d-flex justify-content-center mt-3" data-testid="winner-info-p">
+                    The winner is player {winner}!
+                </p>
+            }
+
+            {
+                draw &&
+                <p className="d-flex justify-content-center mt-3" data-testid="draw-info-p">
+                    Nobody wins, it's a draw!
+                </p>
+            }
+
+
         </>
     );
 }
