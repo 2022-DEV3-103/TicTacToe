@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "cypress": "npx cypress open",
+    "cypress": "concurrently --kill-others \"react-scripts start\" \"npx cypress open\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "cypress": "^11.2.0"
   }
 }
