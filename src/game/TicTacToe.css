@@ -10,3 +10,18 @@ div {
 p {
     font-family: Geneva, sans-serif;
 }
+
+table td {
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    border: solid 2px green;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.available-box:hover {
+    background: rgba(0, 128, 0, 0.42);
+    transition: background-color 0.8s;
+    cursor: pointer;
+}

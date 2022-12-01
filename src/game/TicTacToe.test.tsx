@@ -16,7 +16,9 @@ test('the rendering of the title', () => {
 });
 
 test('the rendering of the first turn ( X )', () => {
-    //TODO
+    render(<TicTacToe/>);
+    const turnInfo = screen.getByTestId('turn-info-div');
+    expect(turnInfo.textContent).toBe('Turn of player X');
 });
 
 test('a classic turn of player X', () => {
