@@ -1,8 +1,8 @@
 # Welcome to this TDD TicTacToe!
 
-![](../Snapshot TicTacToe.png)
-
 This project was done with pleasure using create-react-app & typescript template.
+
+<img width="765" alt="Snapshot TicTacToe" src="https://user-images.githubusercontent.com/119617391/205166080-2331d252-0ba2-4328-a2f0-1d7a9ffebbfb.png">
 
 ## Available Scripts
 
@@ -25,7 +25,7 @@ Component testing is the new way to make unit tests with Cypress. I did it with 
 
 After running this command, you will be at this screen :
 
-![](../Snapshot Cypress.png)
+<img width="1020" alt="Snapshot Cypress" src="https://user-images.githubusercontent.com/119617391/205166174-f030a7f8-cc9c-4365-a1fb-d14df3589ddd.png">
 
 You can choose what you want to run. Then you will see the tests running with the UI.
 
