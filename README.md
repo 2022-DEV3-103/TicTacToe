@@ -2,7 +2,7 @@
 
 This project was done with pleasure using create-react-app & typescript template.
 
-<img width="765" alt="Snapshot TicTacToe" src="https://user-images.githubusercontent.com/119617391/205166080-2331d252-0ba2-4328-a2f0-1d7a9ffebbfb.png">
+<img width="836" alt="Snapshot TicTacToe" src="https://user-images.githubusercontent.com/119617391/205169884-fd6ec14a-a9ca-4aa3-aea7-220739692032.png">
 
 ## Available Scripts
 
