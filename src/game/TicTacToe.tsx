@@ -20,13 +20,35 @@ const TicTacToe: React.FC = (): React.ReactElement => {
 
 
 
+    const handleClick = (cellId: number) => {
+        if (boxes[cellId] !== '') {
+            //already click on this box - unit test this
+            return;
+        }
+
+        let gameState = [...boxes];
+
+        if (player === Player.PLAYER_X) {
+            gameState[cellId] = Player.PLAYER_X;
+            setPlayer(Player.PLAYER_O)
+        } else {
+            gameState[cellId] = Player.PLAYER_O;
+            setPlayer(Player.PLAYER_X);
+        }
+        //checkTableFilled(gameState); if draw
+        //checkWinner(gameState); if winner
+        setBoxes(gameState);
+    }
+
+
+
     const TicTacBox = ({cellId}: BoxProps) => {
         const enableTable = winner.length === 0 && !tableFilled;
         return (
             <td
                 data-testid={`box-${cellId}-td`}
                 className={boxes[cellId] === '' && enableTable ? "available-box" : ''}
-                onClick={() => null}>{boxes[cellId]}
+                onClick={() => enableTable ? handleClick(cellId) : null}>{boxes[cellId]}
             </td>
         )
     }
