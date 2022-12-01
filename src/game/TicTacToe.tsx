@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./TicTacToe.css";
 import {Player} from "./enums/Player.enum";
+import {Button} from "react-bootstrap";
 import {BoxProps} from "./types/BoxProps";
 
 const TicTacToe: React.FC = (): React.ReactElement => {
@@ -18,11 +19,8 @@ const TicTacToe: React.FC = (): React.ReactElement => {
     const gameFinished = tableFilled || winner.length > 0;
     const draw = tableFilled && winner.length === 0;
 
-
-
     const handleClick = (cellId: number) => {
         if (boxes[cellId] !== '') {
-            //already click on this box - unit test this
             return;
         }
 
@@ -58,6 +56,13 @@ const TicTacToe: React.FC = (): React.ReactElement => {
         if (gameState.every(element => element !== '')) {
             setTableFilled(true);
         }
+    }
+
+    const reStart = () => {
+        setWinner('');
+        setTableFilled(false);
+        setBoxes(Array(9).fill(''));
+        setPlayer(Player.PLAYER_X);
     }
 
     const TicTacBox = ({cellId}: BoxProps) => {
@@ -121,7 +126,18 @@ const TicTacToe: React.FC = (): React.ReactElement => {
                 </p>
             }
 
-
+            {
+                gameFinished &&
+                <div className="d-flex justify-content-center">
+                    <Button
+                        data-testid="play-again-btn"
+                        variant="success"
+                        onClick={reStart}
+                    >
+                        Play again
+                    </Button>
+                </div>
+            }
         </>
     );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import {fireEvent, render, screen} from '@testing-library/react';
 import TicTacToe from "./TicTacToe";
 
-
 test('render correctly the component TicTacToe', () => {
     render(<TicTacToe/>);
     const view = render(<TicTacToe/>);

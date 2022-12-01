@@ -13,7 +13,10 @@ describe('Unit testing of component TicTacToe', () => {
   });
 
   it('should restart the game when button Play Again is clicked', () => {
-    //TODO
+    cy.simulateDraw();
+    cy.get('[data-testid="play-again-btn"]').should('be.visible').click();
+    cy.get('[data-testid="box-0-td"]').should('not.contain', 'X');
+    cy.get('[data-testid="box-6-td"]').should('not.contain', 'O');
   });
 
   it('should check if the a box is filled after a click by X',  () => {

@@ -16,7 +16,9 @@ describe('e2e Testing of the game', () => {
   });
 
   it('should show draw message and play button when a draw is triggered', () => {
-   //TODO
+    cy.simulateDraw();
+    cy.get('[data-testid="draw-info-p"]').contains("Nobody wins, it's a draw!");
+    cy.get('[data-testid="play-again-btn"]').should('be.visible');
   });
 
 
