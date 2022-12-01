@@ -1,7 +1,9 @@
+import TicTacToe from "../../src/game/TicTacToe";
+
 describe('Unit testing of component TicTacToe', () => {
 
   beforeEach(() => {
-    //cy.mount(<TicTacToe />);
+    cy.mount(<TicTacToe />);
   });
 
   it('should keep the same value after a double click on the same box', () => {
