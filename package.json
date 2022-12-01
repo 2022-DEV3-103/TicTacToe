@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "cypress": "npx cypress open",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^11.2.0"
   }
 }

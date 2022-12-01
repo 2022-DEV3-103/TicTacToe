@@ -1,5 +1,5 @@
 import React from 'react';
-import {fireEvent, render, screen} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import TicTacToe from "./TicTacToe";
 
 
@@ -16,15 +16,15 @@ test('the rendering of the title', () => {
 });
 
 test('the rendering of the first turn ( X )', () => {
-  //TODO
+    //TODO
 });
 
 test('a classic turn of player X', () => {
-  //TODO
+    //TODO
 });
 
 test('a classic turn of player O', () => {
-   //TODO
+    //TODO
 });
 
 test('prevention of second click on the same box by the next player', () => {
